@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Insta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+
+    <ion-item *ngFor="let post of all">
+      <ion-card>
+
+  <ion-item>
+    <ion-avatar item-start>
+      <img src={{post.caption.from.profile_picture}}>
+    </ion-avatar>
+    <h2></h2>
+  </ion-item>
+  <ion-card-content>
+    <img src={{post.images.standard_resolution.url}}>
+    <p>{{post.caption.text}}
+      </p>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>{{post.likes.count}}</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>{{post.comments.count}}</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        11h ago
+      </ion-note>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+    </ion-item>
+
+</ion-content>
